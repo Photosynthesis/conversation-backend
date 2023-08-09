@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from rest_framework import viewsets
-from .serializers import PromptSerializer, PromptGroupSerializer
-from .models import Prompt, PromptGroup
+from .serializers import PromptSerializer, PromptGroupSerializer, ScenarioSerializer
+from .models import Prompt, PromptGroup, Scenario
 
 # Create your views here.
 
@@ -12,3 +12,7 @@ class PromptView(viewsets.ModelViewSet):
 class PromptGroupView(viewsets.ModelViewSet):
     serializer_class = PromptGroupSerializer
     queryset = PromptGroup.objects.all()
+
+class ScenarioView(viewsets.ModelViewSet):
+    serializer_class = ScenarioSerializer
+    queryset = Scenario.objects.all()

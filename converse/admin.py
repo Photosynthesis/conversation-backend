@@ -1,10 +1,14 @@
 from django.contrib import admin
 
-from .models import Scenario, Prompt, PromptGroup
+from .models import Scenario, Prompt, PromptGroup, ScenarioPrompt
+
+class ScenarioPromptInline(admin.TabularInline):
+    model = ScenarioPrompt
+    extra = 1 # how many rows to show
 
 class ScenarioAdmin(admin.ModelAdmin):
     list_display = ('name', 'description')
-
+    inlines = (ScenarioPromptInline,)
 
 class PromptAdmin(admin.ModelAdmin):
     list_display = ('name', 'tags')

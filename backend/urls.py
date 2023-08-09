@@ -24,6 +24,7 @@ from django.conf.urls.static import static
 router = routers.DefaultRouter()
 router.register(r'prompts', views.PromptView, 'prompt')
 router.register(r'promptgroups', views.PromptGroupView, 'promptgroup')
+router.register(r'scenarios', views.ScenarioView, 'scenario')
 
 urlpatterns = [
     path('admin/', admin.site.urls),
